@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
         <div className={styles.overflowWrapper}>
           <div className={styles.container}>
             {/* Label */}
-            <div className={styles.label}>👨🏻 Alex&apos;s Portfolio</div>
+            <div className={styles.label}>👨🏻 Febry Alfat Portfolio</div>
 
             {/* Title */}
             <h1 className={styles.title}>
