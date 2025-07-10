@@ -29,42 +29,61 @@ export const Hero: React.FC = () => {
 
   return (
     <main>
-      <section className={Styles.hero} ref={containerRef}>
-        <FadeWrapper />
-        <div className={clsx(Styles.overflowWrapper, 'container')}>
-          {/* Label */}
-          <div className={Styles.labelName}>👨🏻 Febry Portofolio</div>
-          <div className={Styles.title}>
-            I am a{' '}
-            {isMobile ? (
-              <>
-                <span className={Styles.box}>
-                  <p className={Styles.boxText}>Front-</p>
-                  <span className={Styles.cornerTopRight}></span>
-                  <span className={Styles.cornerBottomLeft}></span>
-                </span>
-                <span className={Styles.box}>
-                  <p className={Styles.boxText}>End Developer</p>
-                  <span className={Styles.cornerTopRight}></span>
-                  <span className={Styles.cornerBottomLeft}></span>
-                </span>
-              </>
-            ) : (
-              <span className={Styles.box}>
-                <p className={Styles.boxText}>Front-End Developer</p>
-                <span className={Styles.cornerTopRight}></span>
-                <span className={Styles.cornerBottomLeft}></span>
-              </span>
-            )}{' '}
-            & Web Programming Engineering
-          </div>
-          <div className={Styles.description}>
-            <p>
-              Hi, Im Febry, a passionate web developer with over{' '}
-              <span className={Styles.experience}>3 years of experience</span>{' '}
-              in creating responsive websites. I also teach aspiring developers
-              to master modern web programming and bring their ideas to life.
+      <section id='home' className={styles.hero} ref={containerRef}>
+        <FadeWrapper
+          type='end'
+          direction='vertical'
+          className={styles.wavesWrapper}
+        >
+          <div className={styles.wavesBackground} />
+        </FadeWrapper>
+
+        <div className={styles.overflowWrapper}>
+          <div className={styles.container}>
+            {/* Label */}
+            <div className={styles.label}>👨🏻 Febry Alfat Portfolio</div>
+
+            {/* Title */}
+            <h1 className={styles.title}>
+              I am a{' '}
+              <span className={styles.highlight}>
+                {isMobile ? (
+                  <>
+                    <span className={styles.box}>
+                      <p className={styles.boxText}>Front-</p>
+                      <span className={styles.cornerTopRight}></span>
+                      <span className={styles.cornerBottomLeft}></span>
+                    </span>
+                    <span className={styles.box}>
+                      <p className={styles.boxText}>End Developer</p>
+                      <span className={styles.cornerTopRight}></span>
+                      <span className={styles.cornerBottomLeft}></span>
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className={styles.box}>
+                      <p className={styles.boxText}>Front-End Developer</p>
+                      <span className={styles.cornerTopRight}></span>
+                      <span className={styles.cornerBottomLeft}></span>
+                    </span>
+                  </>
+                )}
+              </span>{' '}
+              & Web Programming Instructor
+            </h1>
+
+            {/* Description */}
+            <p className={styles.description}>
+              I am a Front-End Developer who loves to create beautiful and
+              functional websites. I am also a tech enthusiast who loves to
+              learn new things.
             </p>
+
+            {/* CTA Button */}
+            <Button as='a' href='#contactMe' className={styles.ctaButton}>
+              Contact Me
+            </Button>
           </div>
           <Button as='a' href='#' className={Styles.btnHero}>
             Contact Me

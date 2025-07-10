@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             <img src={logo} alt='logo' />
           </span>
           <span>
-            <p>© alex2024</p>
+            <p>&copy; FebryAlfat - 2024</p>
           </span>
         </div>
       </div>
