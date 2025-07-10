@@ -12,8 +12,8 @@ export const AchievementSection: React.FC = () => {
         </div>
         <div>
           <p className={styles.subtitle}>
-            Hi, I’m Alex, a Front-End Developer & Web Programming Instructor
-            based in Jakarta. With over <span>3 years of experience</span>, I
+            Hi, I’m Febry, a Front-End Developer & Web Programming Developer
+            based in Jakarta. With over <span>8 years of experience</span>, I
             specialize in crafting interactive, responsive, and user-friendly
             websites that deliver exceptional digital experiences. My expertise
             spans across various industries, including e-commerce, education,
@@ -26,25 +26,25 @@ export const AchievementSection: React.FC = () => {
         <Achievement.Group>
           <Achievement.Item
             type='secondary'
-            metrix='3+'
+            metrix='8+'
             detail='Years of Experience'
           />
           <Achievement.Item
             type='primary'
-            metrix='3+'
-            detail='Years of Experience'
+            metrix='30+'
+            detail='Projects Completed'
           />
         </Achievement.Group>
         <Achievement.Group>
           <Achievement.Item
             type='secondary'
-            metrix='3+'
-            detail='Years of Experience'
+            metrix='25+'
+            detail='CMS Integration'
           />
           <Achievement.Item
             type='primary'
-            metrix='3+'
-            detail='Years of Experience'
+            metrix='5+'
+            detail='Modern Tech Stack'
           />
         </Achievement.Group>
       </Achievement>

@@ -11,7 +11,7 @@ export const JourneyDescription: React.FC<JourneyDescriptionProps> = ({
   return (
     <div className={styles.journeyDescription}>
       <div className={styles.dot} />
-      {children}|
+      {children}
     </div>
   );
 };

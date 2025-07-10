@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className={styles.footerContainer}>
       <div className={clsx(styles.footer, 'container')}>
-        <div className={styles.socialMedia}>
+        {/* <div className={styles.socialMedia}>
           <span className={styles.socialMediaItem}>
             <img src={linkedin} alt='linkedin' />
           </span>
@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
           <span className={styles.socialMediaItem}>
             <img src={browsing} alt='logo' />
           </span>
-        </div>
+        </div> */}
         <div className={styles.footerInfo}>
           <span>
             <img src={logo} alt='logo' />

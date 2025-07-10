@@ -16,14 +16,65 @@ export const ComparisonSection: React.FC = () => {
             col2Title='Me'
             col3Title='Other'
           />
-          {new Array(7).fill(null).map((_, index) => (
+          {/* {new Array(7).fill(null).map((_, index) => (
             <Comparison.Item
               key={`${index}-item`}
               featureName='React Expert'
               ourState={true}
               competitorState={false}
             />
-          ))}
+          ))} */}
+
+          <Comparison.Item
+            featureName='React JS'
+            ourState={true}
+            competitorState={false}
+          />
+          <Comparison.Item
+            featureName='Typescript'
+            ourState={true}
+            competitorState={false}
+          />
+          <Comparison.Item
+            featureName='Javascript'
+            ourState={true}
+            competitorState={false}
+          />
+          <Comparison.Item
+            featureName='NEXT JS'
+            ourState={true}
+            competitorState={false}
+          />
+
+          <Comparison.Item
+            featureName='JQuery'
+            ourState={true}
+            competitorState={false}
+          />
+
+          <Comparison.Item
+            featureName='HTML, CSS, SCSS'
+            ourState={true}
+            competitorState={false}
+          />
+
+          <Comparison.Item
+            featureName='Tailwind CSS'
+            ourState={true}
+            competitorState={false}
+          />
+
+          <Comparison.Item
+            featureName='Bootstrap'
+            ourState={true}
+            competitorState={false}
+          />
+
+          <Comparison.Item
+            featureName='Wordpress'
+            ourState={true}
+            competitorState={false}
+          />
         </Comparison>
       </Section>
     </main>

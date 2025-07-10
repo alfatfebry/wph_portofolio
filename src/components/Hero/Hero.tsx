@@ -14,10 +14,10 @@ export const Hero: React.FC = () => {
         setIsMobile(width < 569);
       }
     });
-    
+
     const currentRef = containerRef.current;
     if (currentRef) observer.observe(currentRef);
-    
+
     return () => {
       if (currentRef) observer.unobserve(currentRef);
     };
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
                   </>
                 )}
               </span>{' '}
-              & Web Programming Instructor
+              & Web Programming Developer
             </h1>
 
             {/* Description */}

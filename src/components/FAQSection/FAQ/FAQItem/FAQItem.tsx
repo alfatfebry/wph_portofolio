@@ -69,13 +69,12 @@ const expandVariants: Variants = {
 
 const questionVariants: Variants = {
   collapsed: {
-    padding: '1 1.5rem',
+    padding: '1.5rem',
     transition: {
       duration: 0.3,
     },
   },
   expanded: {
-    padding: '1.5rem 1.5rem 1rem 1.5rem',
     transition: {
       duration: 0.3,
     },
@@ -97,10 +96,7 @@ const arrowVariants: Variants = {
   },
 };
 
-export const FAQItem: React.FC<FAQItemProps> = ({
-  question,
-  answer
-}) => {
+export const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleExpand = useCallback(() => {
