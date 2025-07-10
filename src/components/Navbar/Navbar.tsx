@@ -1,179 +1,60 @@
 import React, { useState } from 'react';
-import styles from './Navbar.module.scss';
-import clsx from 'clsx';
+import Styles from './Navbar.module.scss';
 import NavIcon from '@/assets/nav_icon.svg';
-import CloseIcon from '@/assets/icon-close.svg';
 import SMSIcon from '@/assets/Icon-message.svg';
+import { Button } from '../Ui/Button';
 import HamburgerIcon from '@/assets/icon-hamburger.svg';
-import { Button } from '@/components/ui/Button';
-import { Link } from 'react-scroll';
+import IconClose from '@/assets/icon-close.svg';
+import clsx from 'clsx';
 
 export const Navbar: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
-  // Fungsi toggle untuk membuka atau menutup menu
   const toggleMenu = () => {
-    setMenuOpen((prevState) => !prevState);
+    setOpenMenu((prevState) => !prevState);
   };
 
   return (
-    <header className={clsx(styles.header, 'container')}>
-      {/* LOGO */}
-      <div className={styles.logo}>
+    <header className={clsx(Styles.header, 'container')}>
+      {/* Logo */}
+      <div className={Styles.navIcon}>
         <NavIcon />
       </div>
 
-      {/* Navbar untuk desktop */}
-      <nav className={styles.navigation}>
+      {/* Navbar */}
+      <div className={clsx(Styles.navbar, { [Styles.open]: openMenu })}>
         <ul>
-          <li>
-            <Link to='home' smooth={true} duration={500}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to='about' smooth={true} duration={500}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to='skills' smooth={true} duration={800}>
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link to='projects' smooth={true} duration={500}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to='faq' smooth={true} duration={500}>
-              FAQ
-            </Link>
-          </li>
-          <li>
-            <Link to='contactMe' smooth={true} duration={500}>
-              Contact
-            </Link>
-          </li>
+          <li>Home</li>
+          <li>About</li>
+          <li>Skills</li>
+          <li>Projects</li>
+          <li>FAQ</li>
+          <li>Contact</li>
         </ul>
-      </nav>
 
-      {/* Hire Me for desktop and mobile */}
-      <Button as='a' href='#contactMe' className={styles.ctaButton}>
-        <div className={styles.buttonContent}>
+        {/* Mobile Button Hire */}
+        <Button as='a' href='' className={Styles.ctaBtnMobile}>
           <SMSIcon />
-          <span className={clsx(styles.buttonText)}>
-            Hire me
-          </span>
-        </div>
-      </Button>
-
-      {/* Hamburger Icon for mobile */}
-      <div
-        className={styles.hamburger}
-        onClick={toggleMenu} // Panggil fungsi toggleMenu saat icon close di klik
-        role='button'
-        aria-label='Open Menu'
-      >
-        <HamburgerIcon />
+          <span>Hire me</span>
+        </Button>
       </div>
 
-      {/* Navbar untuk mobile */}
-      <nav className={clsx(styles.mobileMenu, {
-        [styles.open]: menuOpen // tambahkan class open jika menuOpen bernilai true
-      })}>
-        <div className={styles.mobileHeader}>
-          <div className={styles.logo}>
-            <NavIcon />
-          </div>
-          <div
-            className={styles.closeIcon}
-            onClick={toggleMenu} // Panggil fungsi toggleMenu saat icon close di klik
-            role='button'
-            aria-label='Close Menu'
-          >
-            <CloseIcon />
-          </div>
-        </div>
-        <ul className={styles.mobileNavLinks}>
-          <li>
-            <Link
-              to='home'
-              smooth={true}
-              duration={500}
-              onClick={toggleMenu}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='about'
-              smooth={true}
-              duration={500}
-              onClick={toggleMenu}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='skills'
-              smooth={true}
-              duration={800}
-              onClick={toggleMenu}
-            >
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='projects'
-              smooth={true}
-              duration={500}
-              onClick={toggleMenu}
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='faq'
-              smooth={true}
-              duration={500}
-              onClick={toggleMenu}
-            >
-              FAQ
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='contactMe'
-              smooth={true}
-              duration={500}
-              onClick={toggleMenu}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-        <Button
-          as='a'
-          href='#contact'
-          className={styles.ctaButton}
-        >
-          <div className={styles.buttonContent}>
-            <SMSIcon />
-            <span className={clsx(
-              styles.buttonText,
-              styles.buttonTextMobile
-            )}>
-              Hire me
-            </span>
-          </div>
+      {/* Desktop Button Hire */}
+      <div className={Styles.ctaDesktop}>
+        <Button as='a' href='' className={Styles.ctaBtnHireMe}>
+          <SMSIcon />
+          <span>Hire me</span>
         </Button>
-      </nav>
+        <div
+          className={clsx(Styles.toggleMenu, { [Styles.open]: openMenu })}
+          onClick={toggleMenu}
+          role='button'
+          aria-label='Open menu'
+        >
+          <HamburgerIcon className={Styles.hamburgerIcon} />
+          <IconClose className={Styles.closeMenu} />
+        </div>
+      </div>
     </header>
-  )
-}
+  );
+};

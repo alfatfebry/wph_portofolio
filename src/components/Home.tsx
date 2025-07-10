@@ -1,21 +1,19 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
-import styles from './Home.module.scss';
 import { Navbar } from './Navbar';
 import { Hero } from './Hero';
 import { About } from './About';
-import { AchievementSection } from './AchievementSection';
-import { CareerJourneySection } from './CareerJourneySection';
-import { CoreSkillSection } from './CoreSkillSection';
-import { ComparisonSection } from './ComparisonSection';
-import { ProjectsSection } from './ProjectsSection';
-import { Testimony } from './Testimony';
-import { FAQSection } from './FAQSection';
-import { ContactUs } from './ContactUs';
-import { Footer } from './Footer';
+import { AchievementSection } from './Achievement/AchievementSection';
+import { CareerJourneySection } from './Journey';
+import CoreSkillSection from './CoreSkill/CoreSkillSection';
+import { ComparisonSection } from './Comparison';
+import { ProjectSection } from './Projects/ProjectSection';
+import { Testimoni } from './Testimoni/Testimoni';
+import { FAQItem } from './FAQ/FAQItem';
 
 export const Home: React.FC = () => {
   return (
-    <div className={styles.homePage}>
+    <>
       <Navbar />
       <Hero />
       <About />
@@ -23,11 +21,9 @@ export const Home: React.FC = () => {
       <CareerJourneySection />
       <CoreSkillSection />
       <ComparisonSection />
-      <ProjectsSection />
-      <Testimony />
-      <FAQSection />
-      <ContactUs />
-      <Footer />
-    </div>
+      <ProjectSection />
+      <Testimoni />
+      <FAQItem />
+    </>
   );
 };

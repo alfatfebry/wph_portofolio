@@ -1,7 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
-import styles from './Hero.module.scss';
-import { Button } from '../ui/Button';
-import { FadeWrapper } from '../ui/FadeWrapper';
+import React, { useEffect, useRef, useState } from 'react';
+import Styles from './Hero.module.scss';
+import { FadeWrapper } from '../Ui/FadeWrapper';
+import clsx from 'clsx';
+import { Button } from '../Ui/Button';
 
 export const Hero: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -14,73 +15,60 @@ export const Hero: React.FC = () => {
         setIsMobile(width < 569);
       }
     });
-    
-    const currentRef = containerRef.current;
-    if (currentRef) observer.observe(currentRef);
-    
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
     return () => {
-      if (currentRef) observer.unobserve(currentRef);
+      if (containerRef.current) {
+        observer.observe(containerRef.current);
+      }
     };
   }, []);
 
   return (
     <main>
-      <section id='home' className={styles.hero} ref={containerRef}>
-        <FadeWrapper
-          type='end'
-          direction='vertical'
-          className={styles.wavesWrapper}
-        >
-          <div className={styles.wavesBackground} />
-        </FadeWrapper>
-
-        <div className={styles.overflowWrapper}>
-          <div className={styles.container}>
-            {/* Label */}
-            <div className={styles.label}>👨🏻 Alex&apos;s Portfolio</div>
-
-            {/* Title */}
-            <h1 className={styles.title}>
-              I am a{' '}
-              <span className={styles.highlight}>
-                {isMobile ? (
-                  <>
-                    <span className={styles.box}>
-                      <p className={styles.boxText}>Front-</p>
-                      <span className={styles.cornerTopRight}></span>
-                      <span className={styles.cornerBottomLeft}></span>
-                    </span>
-                    <span className={styles.box}>
-                      <p className={styles.boxText}>End Developer</p>
-                      <span className={styles.cornerTopRight}></span>
-                      <span className={styles.cornerBottomLeft}></span>
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <span className={styles.box}>
-                      <p className={styles.boxText}>Front-End Developer</p>
-                      <span className={styles.cornerTopRight}></span>
-                      <span className={styles.cornerBottomLeft}></span>
-                    </span>
-                  </>
-                )}
-              </span>{' '}
-              & Web Programming Instructor
-            </h1>
-
-            {/* Description */}
-            <p className={styles.description}>
-              I am a Front-End Developer who loves to create beautiful and
-              functional websites. I am also a tech enthusiast who loves to
-              learn new things.
-            </p>
-
-            {/* CTA Button */}
-            <Button as='a' href='#contactMe' className={styles.ctaButton}>
-              Contact Me
-            </Button>
+      <section className={Styles.hero} ref={containerRef}>
+        <FadeWrapper />
+        <div className={clsx(Styles.overflowWrapper, 'container')}>
+          {/* Label */}
+          <div className={Styles.labelName}>👨🏻 Febry Portofolio</div>
+          <div className={Styles.title}>
+            I am a{' '}
+            {isMobile ? (
+              <>
+                <span className={Styles.box}>
+                  <p className={Styles.boxText}>Front-</p>
+                  <span className={Styles.cornerTopRight}></span>
+                  <span className={Styles.cornerBottomLeft}></span>
+                </span>
+                <span className={Styles.box}>
+                  <p className={Styles.boxText}>End Developer</p>
+                  <span className={Styles.cornerTopRight}></span>
+                  <span className={Styles.cornerBottomLeft}></span>
+                </span>
+              </>
+            ) : (
+              <span className={Styles.box}>
+                <p className={Styles.boxText}>Front-End Developer</p>
+                <span className={Styles.cornerTopRight}></span>
+                <span className={Styles.cornerBottomLeft}></span>
+              </span>
+            )}{' '}
+            & Web Programming Engineering
           </div>
+          <div className={Styles.description}>
+            <p>
+              Hi, Im Febry, a passionate web developer with over{' '}
+              <span className={Styles.experience}>3 years of experience</span>{' '}
+              in creating responsive websites. I also teach aspiring developers
+              to master modern web programming and bring their ideas to life.
+            </p>
+          </div>
+          <Button as='a' href='#' className={Styles.btnHero}>
+            Contact Me
+          </Button>
         </div>
       </section>
     </main>

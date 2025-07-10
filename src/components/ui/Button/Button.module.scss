@@ -1,15 +1,15 @@
 .button {
-  height: rem-calc(40);
+  height: rem-calc(48);
   background: linear-gradient(to right, #dc49a6, #8746eb);
-  padding: 0 rem-calc(11);
-  gap: get-spacing('spacing-sm');
+  padding: rem-calc(11);
   border-radius: get-radius('radius-full');
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: get-spacing('spacing-sm');
+  color: get-color('neutral', 100);
 
   @include md {
-    height: rem-calc(48);
     padding: 0 rem-calc(47);
   }
 }

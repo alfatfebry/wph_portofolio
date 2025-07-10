@@ -1,0 +1,48 @@
+.achievementItem {
+  flex: 1;
+  aspect-ratio: 1/1;
+  border: 1px solid transparent;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: get-spacing('spacing-sm');
+  flex-direction: column;
+  color: get-color('neutral', 100);
+  border-radius: get-radius('radius-full');
+
+  @include md {
+    gap: gap-spacing('spancing-md');
+  }
+
+  &.primary {
+    background-image: linear-gradient(to right, #dc49a6, #8746eb),
+      linear-gradient(to right, #dc49a6, #8746eb);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  &.secondary {
+    $color: get-color('neutral', 500);
+    background-image: linear-gradient(to right, $color, $color),
+      linear-gradient(to right, #dc49a6, #8746eb);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .metrix {
+    @include typography('display-sm', 'extrabold');
+
+    @include md {
+      @include typography('display-2xl', 'extrabold');
+    }
+  }
+
+  .detail {
+    @include typography('text-sm', 'regular');
+    text-align: center;
+
+    @include md {
+      @include typography('text-md', 'regular');
+    }
+  }
+}
