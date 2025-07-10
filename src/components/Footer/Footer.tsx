@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import clsx from 'clsx';
-import linkedin from '@/assets/Linkedin.png';
-import instagram from '@/assets/Instagram.png';
-import browsing from '@/assets/browsing.png';
+// import linkedin from '@/assets/Linkedin.png';
+// import instagram from '@/assets/Instagram.png';
+// import browsing from '@/assets/browsing.png';
 import logo from '@/assets/logo.png';
 
 export const Footer: React.FC = () => {
