@@ -1,1 +1,1 @@
-export * from './TechStactButton';
+export * from './TechStackButton';

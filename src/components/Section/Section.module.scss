@@ -11,12 +11,12 @@
 
     .title {
       @include typography('display-sm', 'extrabold');
+      color: get-color('neutral', 100);
 
       @include md {
         @include typography('display-2xl', 'extrabold');
       }
     }
-
     .subtitle {
       @include typography('text-sm', 'regular');
       color: get-color('neutral', 200);
